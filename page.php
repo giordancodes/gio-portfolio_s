@@ -15,7 +15,8 @@
 get_header(); ?>
 <!-- section.about -->
 	<section id="about">
-		
+		<div class="wrapper">
+
 
 		<?php $aboutQuery = new WP_query(
 			array(
@@ -31,12 +32,14 @@ get_header(); ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif ?>
 
+		</div>
 	</section>
 <!-- /section.about -->
 
 <!-- section.recent -->
-	<section id="recent">
-		
+	<section id="work">
+		<div class="wrapper">
+
 		<h2>Recent Work</h2>
 
 			<?php $workQuery = new WP_query(
@@ -61,6 +64,7 @@ get_header(); ?>
 			<?php wp_reset_postdata(); ?>
 		<?php endif ?>
 
+		</div>
 	</section>
 <!-- /section.recent -->
 
@@ -82,15 +86,18 @@ get_header(); ?>
 					<?php endwhile ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif ?>
+
 		</div>
 	</section>
 <!-- /section.skills -->
 
 <!-- section.contact -->
 	<section id="contact">
-		<h2>Contact</h2>
-		
+		<div class="wrapper">
 
+			<h2>Contact</h2>
+		
+		</div>
 	</section>
 <!-- /section.contact -->
 
