@@ -22,6 +22,17 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<nav>
+	<ul>
+		<p id="open" class="curly">{</p>
+		<li><a href="#about">About</a></li>
+		<li><a href="#work">Work</a></li>
+		<li><a href="#skills">Skills</a></li>
+		<li><a href="#contact">Contact</a></li>
+		<p id="close" class="curly">}</p>
+	</ul>
+</nav><!-- #site-navigation -->
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
@@ -35,10 +46,6 @@
 			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

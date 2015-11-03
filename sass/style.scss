@@ -118,3 +118,71 @@ header{
 	margin: 0;
 	background: $darkgrey;
 }
+
+.site-title, .site-description{
+	text-align: center;
+	color: white;
+}
+
+nav{
+	position: fixed;
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li{
+			display: inline-block;
+			a{
+				color: white;
+			}
+		}
+	}
+}
+
+.curly{
+	display: inline;
+	color: $green;
+}
+
+h2{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.wrapper{
+	max-width: 1080px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column{
+	flex-direction: column;
+}
+
+.row{
+	flex-direction: row;
+}
+
+#recent{
+	background: $darkgrey;
+}
+
+#skills{
+	background: $lightgrey;
+}
+
+#skills .wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	// padding: 5rem 0;
+	.skillsImg{
+		img{
+
+		}
+	}
+}
+
+#contact{
+	background: white;
+}

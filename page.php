@@ -14,23 +14,83 @@
 
 get_header(); ?>
 <!-- section.about -->
-	<section class="about">
+	<section id="about">
 		
+
+		<?php $aboutQuery = new WP_query(
+			array(
+					'post_type'=>'about'
+				)
+		); ?>
+
+			<?php if ($aboutQuery->have_posts()): ?>
+				<?php while($aboutQuery->have_posts()): $aboutQuery->the_post(); ?>
+				<?php the_post_thumbnail('medium'); ?>
+				<p><?php the_content(); ?></p>
+				<?php endwhile ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif ?>
+
 	</section>
 <!-- /section.about -->
+
 <!-- section.recent -->
-	<section class="recent">
+	<section id="recent">
 		
+		<h2>Recent Work</h2>
+
+			<?php $workQuery = new WP_query(
+				array(
+						'post_type'=>'work',
+						'cat'=>3
+					)
+			); ?>
+
+				<?php if ($workQuery->have_posts()): ?>
+					<?php while($workQuery->have_posts()): $workQuery->the_post(); ?>
+				<div class="works">
+					<h3><?php the_title( ) ?></h3>
+					<?php the_post_thumbnail('large'); ?>
+					<p><?php the_content( ); ?></p>
+					<button class="liveDemo"><a target="_blank" href="http://<?php the_field('live_demo');?>
+					">Live Demo</a>
+					</button>
+					<button class="source"><a href="<?php the_field('source'); ?> ">Source</a></button>
+				</div>
+				<?php endwhile ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif ?>
+
 	</section>
 <!-- /section.recent -->
+
 <!-- section.skills -->
-	<section class="skills">
-		
+	<section id="skills">
+		<div class="wrapper">
+			<?php $skillQuery = new WP_query(
+				array(
+						'posts_per_page'=>-1,
+						'post_type'=>'skill'
+					)
+			); ?>
+
+				<?php if ($skillQuery->have_posts()): ?>
+					<?php while($skillQuery->have_posts()): $skillQuery->the_post(); ?>
+					<div class="skillsImg">
+					<?php echo the_post_thumbnail('thumbnail'); ?>
+					</div>
+					<?php endwhile ?>
+				<?php wp_reset_postdata(); ?>
+			<?php endif ?>
+		</div>
 	</section>
 <!-- /section.skills -->
+
 <!-- section.contact -->
-	<section class="contact">
+	<section id="contact">
+		<h2>Contact</h2>
 		
+
 	</section>
 <!-- /section.contact -->
 
