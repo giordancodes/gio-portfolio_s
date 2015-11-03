@@ -30,6 +30,27 @@ get_header(); ?>
 
 			<?php endwhile; // End of the loop. ?>
 
+			<h2>Featured Work</h2>
+
+			<?php $workQuery = new WP_query(
+				array(
+						'post_type'=>'work',
+						'cat'=>3
+					)
+			); ?>
+
+				<?php if ($workQuery->have_posts()): ?>
+					<?php while($workQuery->have_posts()): $workQuery->the_post(); ?>
+				<!-- stuff goes here -->
+				<div class="works">
+					<h3><?php the_title( ) ?></h3>
+					<?php the_post_thumbnail('large'); ?>
+					<p><?php the_content( ); ?></p>
+				</div>
+				<?php endwhile ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif ?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
