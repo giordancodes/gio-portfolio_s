@@ -105,3 +105,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+
+$lightgrey: #D8D8D8;
+$darkgrey: #5B5C5D;
+$green: #49F968;
+$darkergrey: #3E4042;
+$opensans: 'Open Sans', sans-serif;
+
+header{
+	padding: 0;
+	margin: 0;
+	background: $darkgrey;
+}

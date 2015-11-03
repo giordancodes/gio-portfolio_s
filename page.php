@@ -13,46 +13,27 @@
  */
 
 get_header(); ?>
+<!-- section.about -->
+	<section class="about">
+		
+	</section>
+<!-- /section.about -->
+<!-- section.recent -->
+	<section class="recent">
+		
+	</section>
+<!-- /section.recent -->
+<!-- section.skills -->
+	<section class="skills">
+		
+	</section>
+<!-- /section.skills -->
+<!-- section.contact -->
+	<section class="contact">
+		
+	</section>
+<!-- /section.contact -->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
-
-			<?php endwhile; // End of the loop. ?>
-
-			<h2>Featured Work</h2>
-
-			<?php $workQuery = new WP_query(
-				array(
-						'post_type'=>'work',
-						'cat'=>3
-					)
-			); ?>
-
-				<?php if ($workQuery->have_posts()): ?>
-					<?php while($workQuery->have_posts()): $workQuery->the_post(); ?>
-				<!-- stuff goes here -->
-				<div class="works">
-					<h3><?php the_title( ) ?></h3>
-					<?php the_post_thumbnail('large'); ?>
-					<p><?php the_content( ); ?></p>
-				</div>
-				<?php endwhile ?>
-			<?php wp_reset_postdata(); ?>
-		<?php endif ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
